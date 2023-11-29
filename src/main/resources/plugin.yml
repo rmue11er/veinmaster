@@ -1,0 +1,10 @@
+name: VeinMaster
+version: 1.0
+main: de.drawingco.veinmaster.VeinMaster
+author: cringekachu
+description: VeinMiner for Spigot
+commands:
+  veinminer:
+    description: VeinMiner command
+    usage: /<command>
+    aliases: [vm]
