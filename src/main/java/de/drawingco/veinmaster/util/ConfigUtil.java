@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  * VeinMaster
- * Copyrigth (c) 2020 by @cringekachu
+ * Copyright (c) 2023 by @cringekachu
  * https://www.spigotmc.org/members/cringekachu.1920125/
  * info@drawingco.de
  */

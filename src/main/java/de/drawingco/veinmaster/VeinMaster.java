@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * VeinMaster
- * Copyrigth (c) 2020 by @cringekachu
+ * Copyright (c) 2023 by @cringekachu
  * https://www.spigotmc.org/members/cringekachu.1920125/
  * info@drawingco.de
  */
@@ -15,7 +15,7 @@ public class VeinMaster extends JavaPlugin {
     public boolean isDebug;
     @Override
     public void onEnable() {
-        // register event
+        // register ore break event
         getServer().getPluginManager().registerEvents(new PlayerOreBreakEvent(this), this);
 
         // load config

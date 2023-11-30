@@ -7,12 +7,13 @@ import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 
 /**
  * VeinMaster
- * Copyrigth (c) 2020 by @cringekachu
+ * Copyright (c) 2023 by @cringekachu
  * https://www.spigotmc.org/members/cringekachu.1920125/
  * info@drawingco.de
  */
@@ -42,6 +43,17 @@ public class PlayerOreBreakEvent implements Listener {
                         plugin.getLogger().info("Vein mining disabled for creative players");
                     }
 
+                    return;
+                }
+            }
+
+            // check if user is using the right tool to break the block
+            if ((boolean) plugin.configUtil.getAttribute("settings", "disableVeinMiningWrongTool", true)) {
+                if (plugin.isDebug) {
+                    plugin.getLogger().info("isHarvestable returned " + BlockUtil.isHarvestable(b, event.getPlayer().getInventory().getItemInMainHand().getType()));
+                }
+
+                if(!BlockUtil.isHarvestable(b, event.getPlayer().getInventory().getItemInMainHand().getType())) {
                     return;
                 }
             }

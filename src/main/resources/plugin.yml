@@ -1,10 +1,7 @@
 name: VeinMaster
-version: 1.0
+version: 1.0.0
 main: de.drawingco.veinmaster.VeinMaster
 author: cringekachu
 description: VeinMiner for Spigot
+api-version: 1.13
 commands:
-  veinminer:
-    description: VeinMiner command
-    usage: /<command>
-    aliases: [vm]
