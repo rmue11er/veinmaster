@@ -24,7 +24,6 @@ public class BlockUtil {
             if (blockFace.getType().name().replace("GLOWING_", "").equals(origin.getType().name().replace("GLOWING_", ""))) {
                 if (!blocks.contains(blockFace)) {
                     blocks.add(blockFace);
-                    plugin.getLogger().info("Added block " + blockFace.getType().name() + " to vein");
 
                     // Check for max vein size
                     if (blocks.size() >= (int) plugin.configUtil.getAttribute("settings", "maxVeinSize", 64)) {
@@ -49,7 +48,6 @@ public class BlockUtil {
 
         return blocks;
     }
-
 
     private static final HashMap<Material, PickaxeType> oreAccessibility = new HashMap<>() {{
         put(Material.COAL_ORE, PickaxeType.WOODEN);

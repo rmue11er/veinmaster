@@ -2,6 +2,7 @@ package de.drawingco.veinmaster;
 
 import de.drawingco.veinmaster.event.PlayerOreBreakEvent;
 import de.drawingco.veinmaster.util.ConfigUtil;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -13,6 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class VeinMaster extends JavaPlugin {
     public ConfigUtil configUtil;
     public boolean isDebug;
+    private Metrics metrics;
     @Override
     public void onEnable() {
         // register ore break event
@@ -25,11 +27,17 @@ public class VeinMaster extends JavaPlugin {
         if(isDebug) {
             getLogger().info("Debug mode enabled");
         }
+
+        // Lets add some metrics
+        metrics = new Metrics(this, 20420);
+
+        getLogger().info("VeinMaster startup finished.");
     }
 
     @Override
     public void onDisable() {
         configUtil.shutdown();
-        getLogger().info("VeinMaster disabled. Unloaded all configs.");
+        metrics.shutdown();
+        getLogger().info("VeinMaster disabled.");
     }
 }
